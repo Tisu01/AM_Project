@@ -28,7 +28,7 @@ const Home = ({ navigation }) => {
             base: "column",
             md: "row",
           }}
-          space={2}
+          space={3}
           mx={{
             base: "auto",
             md: "0",
