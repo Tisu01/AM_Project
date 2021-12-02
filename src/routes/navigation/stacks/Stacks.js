@@ -2,8 +2,9 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
 import Home from 'scenes/home'
-import Profile from 'scenes/profile'
-import Details from 'scenes/details'
+import Startup from 'scenes/startup'
+import SignIn from 'scenes/signIn'
+import SignUp from 'scenes/signUp'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 
@@ -38,39 +39,72 @@ export const HomeNavigator = () => (
         headerTitle: () => <HeaderTitle />,
       })}
     />
-    <Stack.Screen
-      name="Details"
-      component={Details}
-      options={({ navigation }) => ({
-        title: 'Home',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
-    />
+
   </Stack.Navigator>
 )
 
-export const ProfileNavigator = () => (
+
+export const StartupNavigator = () => (
   <Stack.Navigator
-    initialRouteName="Profile"
+    initialRouteName="Startup"
     headerMode="screen"
     screenOptions={navigationProps}
   >
-    <Stack.Screen
-      name="Profile"
-      component={Profile}
-      options={({ navigation }) => ({
-        title: 'Profile',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
-        headerTitle: () => <HeaderTitle />,
-      })}
-    />
-    <Stack.Screen
-      name="Details"
-      component={Details}
-      options={{
-        title: 'Details',
-      }}
-    />
+  <Stack.Screen
+        name="Startup"
+        component={Startup}
+        options={({ navigation }) => ({
+          title: 'Startup',
+          headerLeft: () => <HeaderLeft navigation={navigation} />,
+          headerTitle: () => <HeaderTitle />,
+        })}
+      />
+      <Stack.Screen
+            name="SignIn"
+            component={SignIn}
+            options={{
+              title: 'Sign In',
+            }}
+          />
+       <Stack.Screen
+                  name="SignUp"
+                  component={SignUp}
+                  options={{
+                    title: 'Sign Up',
+                  }}
+       />
+
+
+
   </Stack.Navigator>
 )
+
+
+
+export const SignInNavigator = () => (
+  <Stack.Navigator
+    initialRouteName="SignIn"
+    headerMode="screen"
+    screenOptions={navigationProps}
+  >
+  <Stack.Screen
+        name="SignIn"
+        component={Startup}
+        options={({ navigation }) => ({
+          title: 'SignIn',
+          headerLeft: () => <HeaderLeft navigation={navigation} />,
+          headerTitle: () => <HeaderTitle />,
+        })}
+      />
+      <Stack.Screen
+             name="SignUp"
+             component={SignUp}
+             options={{
+                title: 'Sign Up',
+                }}
+             />
+
+  </Stack.Navigator>
+)
+
+

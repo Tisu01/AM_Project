@@ -1,3 +1,3 @@
-import Home from './Startup'
+import Startup from './Startup'
 
 export default Startup

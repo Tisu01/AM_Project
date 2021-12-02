@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 import { Provider } from 'react-redux'
 import store from 'utils/store'
+import { NativeBaseProvider} from 'native-base';
 import 'utils/ignore'
 
 // assets
@@ -28,9 +29,13 @@ const App = () => {
   // rendering
   if (!didLoad) return <View />
   return (
-    <Provider store={store}>
+
+   <Provider store={store}>
+    <NativeBaseProvider>
       <Router />
+      </NativeBaseProvider>
     </Provider>
+
   )
 }
 

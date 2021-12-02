@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from 'prop-types'
 import {
+  StyleSheet,
+  Image,
   Button,
   Divider,
   Heading,
@@ -8,10 +10,19 @@ import {
   Stack,
   ScrollView,
   Center,
-  NativeBaseProvider,
+  NativeBaseConfigProvider,
+  useToast,
+  Box,
 } from "native-base"
-const Home = ({ navigation }) => {
+
+const img = require('../../../assets/images/vinted.png');
+
+
+const Startup = ({ navigation }) => {
+const toast = useToast()
+
   return (
+
       <VStack
         w="100%"
         space={2.5}
@@ -20,8 +31,15 @@ const Home = ({ navigation }) => {
         alignItems="center"
         justifyContent="center"
       >
-         <Heading size="lg">VINTED</Heading>
+         <Heading size="lg">VINTLED</Heading>
+          <Image
+              source={{ uri: img.src }}
+              width={100}
+              height={100}
+              alt= "Srinted"
+            />
         <Stack
+
           mb="2.5"
           mt="1.5"
           direction={{
@@ -34,32 +52,34 @@ const Home = ({ navigation }) => {
             md: "0",
           }}
         >
-          //<Button size="lg" onPress={() => {navigation.navigate('Details', { from: 'Home' })}}>SIGN IN</Button>
-          <Button size="lg" onPress={() => console.log("logowanie")})}}>SIGN IN</Button>
-          <Button size="lg" onPress={() => console.log("rejestracja")}>SIGN UP</Button>
-          <Button size="lg" onPress={() => console.log("exit")}>EXIT</Button>
+
+          <Button size="lg" onPress={() => {navigation.navigate('SignIn', { from: 'Startup' })}}>SIGN IN</Button>
+          <Button size="lg" onPress={() => {navigation.navigate('SignUp', { from: 'Startup' })}}>SIGN UP</Button>
+          <Button size="lg"  onPress={() => {
+                                    toast.show({
+                                      render: () => {
+                                        return (
+                                          <Box bg="emerald.500" px="2" py="1" rounded="sm" mb={5}>
+                                            EXIT ale NIE EXIT
+                                          </Box>
+                                        )
+                                      },
+                                    })
+                                  }}>EXIT</Button>
         </Stack>
 
-        <Divider w="100%" />
+
       </VStack>
 
   )
 }
-/*
-Home.propTypes = {
+
+Startup.propTypes = {
   navigation: PropTypes.shape({ navigate: PropTypes.func }),
 }
 
-Home.defaultProps = {
+Startup.defaultProps = {
   navigation: { navigate: () => null },
 }
-*/
-export default () => {
-  return (
-    <NativeBaseProvider>
-      <Center flex={1} px="3">
-        <Startup />
-      </Center>
-    </NativeBaseProvider>
-  )
-}
+
+export default Startup
