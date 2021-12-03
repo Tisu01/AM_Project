@@ -13,7 +13,7 @@ import {
   Center,
   NativeBaseProvider,
   AlertDialog,
-
+ Dimensions ,
 } from "native-base"
 
 const SignIn = ({ navigation }) => {
@@ -24,7 +24,7 @@ const SignIn = ({ navigation }) => {
 
    const cancelRef = React.useRef(null)
   return (
-    <Box safeArea p="2" py="8" w="90%" maxW="290">
+    <Box safeArea p="2" py="8" w="100%" maxW="100%">
       <Heading
         size="lg"
         fontWeight="600"
@@ -94,7 +94,7 @@ const SignIn = ({ navigation }) => {
                 </AlertDialog.Content>
               </AlertDialog>
         <Text >Nie masz Konta ? Zarejestruj się!!</Text>
-        <HStack  justifyContent="center">
+        <HStack mt="2"  justifyContent="center">
             <Button mt="2" colorScheme="indigo" size="full" height="10"
             onPress={() => {navigation.navigate('SignUp', { from: 'SignIn' })}}>Zarejestruj się</Button>
 

@@ -18,7 +18,7 @@ const SignUp = () => {
 
   const cancelRef = React.useRef(null)
   return (
-    <Box safeArea p="2" w="90%" maxW="290" py="8">
+    <Box safeArea p="2" w="100%" maxW="100%" py="8">
       <Heading
         size="lg"
         color="coolGray.800"

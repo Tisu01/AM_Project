@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { View } from 'react-native'
+import { View, useWindowDimensions } from 'react-native'
 import { Provider } from 'react-redux'
 import store from 'utils/store'
-import { NativeBaseProvider} from 'native-base';
+import { NativeBaseProvider, Center} from 'native-base';
+import { TabView, SceneMap } from 'react-native-tab-view';
 import 'utils/ignore'
 
 // assets
@@ -38,5 +39,7 @@ const App = () => {
 
   )
 }
+
+
 
 export default App
