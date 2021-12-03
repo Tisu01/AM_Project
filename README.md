@@ -65,8 +65,11 @@ It's very important to keep code clean to maintain readability and productivity.
 ```
 
 3. `yarn install` or `npm install`
-4. If you haven't setup expo, please follow the [instruction](https://expo.io/learn) to complete setup
-5. In terminal, `expo start`
+4. yarn add native-base
+5. yarn add react-native-tab-view
+6. expo install react-native-pager-view
+7. If you haven't setup expo, please follow the [instruction](https://expo.io/learn) to complete setup
+8. In terminal, `expo start`
 
 ## Licence
 
